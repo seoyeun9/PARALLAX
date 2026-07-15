@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PARALLAX : WHITEOUT</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  
+    <div class="mobile-container">
+        
+        <!-- 배경 -->
+        <div class="common-bg" img src="image/background.png" alt="background"></div>
+        <!-- 천체 서클 -->
+        <div id="astronomy-wheel" class="astro-wheel" img src="image/astro.png" alt="astro"></div>
+
+
+        <!-- HOME SCREEN (메인 홈) -->
+        <section id="home-screen" class="game-screen active">
+            <div class="screen-content" style="background-image: url('content-home.png');"></div>
+            <button id="btn-start" class="clickable-area start-trigger"></button>
+        </section>
+
+
+        <!-- LOADING SCREEN (로딩) -->
+        <section id="loading-screen" class="game-screen">
+            <div class="loading-wrapper">
+                <p class="loading-text">Loading the Universe</p>
+            </div>
+        </section>
+
+
+        <!-- SCENARIO SCREEN (시나리오) -->
+        <section id="scenario-screen" class="game-screen">
+            <!-- 금색 테두리 데코레이션 레이어 (배경 위에 올림) -->
+            <div class="scenario-border"></div>
+
+            <!-- 스크롤이 가능하도록 내부 영역 분리 -->
+            <div class="scenario-scroll-container">
+                
+                <!-- 상단 타이틀 구역 (SVG 이미지 대체) -->
+                <header class="scenario-header">
+                    <span class="universe-num">universe 5</span>
+                    <!-- WHITEOUT 타이틀 SVG 파일 삽입 -->
+                    <img src="title-whiteout.svg" alt="WHITEOUT" class="universe-title-svg">
+                </header>
+
+                <!-- 설산 일러스트 구역 (PNG 이미지 대체) -->
+                <div class="cabin-illustration-wrapper">
+                    <img src="cabin-illustration.png" alt="Isolated Cabin" class="cabin-png">
+                </div>
+
+                <!-- 시나리오 본문 실제 텍스트 구역 -->
+                <article class="scenario-body-text">
+                    <p>
+                        You trapped in a mountain cabin with absolute strangers by the worst blizzard. 
+                        <strong>Telecommunication and internet, and the heater has broken down</strong> due to snow. 
+                        The only way to <strong>raise the temperature is to stoke the fireplace with firewood.</strong>
+                    </p>
+
+                    <p>
+                        All you have are a small snacks brought by individuals, some 
+                        <strong>canned food in the outdoor shed, and limited supply of drinking water.</strong>
+                    </p>
+
+                    <p>
+                        The last confirmed <strong>rescue date is 7 days from now.</strong>
+                    </p>
+
+                    <p>
+                        Can you survive with people of different personalities and occupations without conflicts? 
+                        You will face critical choices in various situations.
+                    </p>
+
+                    <p class="highlight-block">
+                        One thing is certain:<br>
+                        <strong>Survival is meaningful if you make it out together...</strong>
+                    </p>
+                </article>
+
+                <!-- 하단 버튼 구역 (두 버튼을 감싸는 통이미지 혹은 개별 이미지 처리 가능하도록 구성) -->
+                <footer class="scenario-footer-buttons">
+                    <!-- 하단 버튼 영역 전체를 하나의 이미지 배경으로 처리한 후 투명 클릭 영역 지정 -->
+                    <div class="button-graphic-bg" style="background-image: url('buttons-bg.png');">
+                        <button id="btn-shuffle" class="footer-click-btn"></button>
+                        <button id="btn-choose" class="footer-click-btn"></button>
+                    </div>
+                </footer>
+
+            </div>
+        </section>
+
+    </div>
+
+    <!-- 화면 전환 및 애니메이션 제어 스크립트 -->
+    <script>
+        const startBtn = document.getElementById('btn-start');
+        const homeScreen = document.getElementById('home-screen');
+        const loadingScreen = document.getElementById('loading-screen');
+        const scenarioScreen = document.getElementById('scenario-screen');
+        const astroWheel = document.getElementById('astronomy-wheel');
+
+        startBtn.addEventListener('click', () => {
+            // 1. 홈 스크린 페이드아웃
+            homeScreen.classList.remove('active');
+            
+            // 2. 로딩 스크린 활성화 + 천체 바퀴 회전 시작!
+            loadingScreen.classList.add('active');
+            astroWheel.classList.add('rotating'); // CSS 애니메이션 작동 트리거
+
+            // 3. 3초간 천천히 돌아간 후 시나리오로 전환
+            setTimeout(() => {
+                loadingScreen.classList.remove('active');
+                astroWheel.classList.remove('rotating'); // 회전 멈춤
+                scenarioScreen.classList.add('active');
+            }, 3000); // 3000ms = 3초 (돌아가는 모션을 충분히 보여주기 위해 살짝 늘렸습니다)
+        });
+    </script>
+</body>
+</html>
