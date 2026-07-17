@@ -40,7 +40,7 @@ body {
 
 .border-frame {
   position: absolute;
-  width: 100%;
+  width: 95%;
 
   top: 7px;
   left: 50%;
@@ -59,13 +59,16 @@ body {
 
 .celestial-chart {
   position: absolute;
-  bottom: -180px;
+  width: 130%;
+  bottom: -95px;
   
   left: 50%;
   transform: translateX(-50%) rotate(0deg);
 
+  pointer-events: none;
+
   transition: transform 3s cubic-bezier(0.25, 1, 0.5, 1);
-  z-index: 10;
+  z-index: 3;
 }
 
     .celestial-chart img {
@@ -78,6 +81,24 @@ body {
   transform: rotate(360deg); /* 180도 부드럽게 회전 */
 }
 
+.brand-header {
+  position: absolute;
+  width: 100%;
+  top: 95px;
+  
+  left: 50%;
+  transform: translateX(-50%);
+
+  pointer-events: none;
+
+  z-index: 10;
+}
+
+    .brand-header img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
 
 .screen {
   position: absolute;
@@ -102,12 +123,14 @@ body {
   visibility: visible;
 }
 
-/* 버튼 기본 스타일링 (SVG 리소스를 올릴 래퍼) */
+
 button {
   background: none;
   border: none;
   cursor: pointer;
   outline: none;
+
+  z-index: 10;
 }
 
 .btn-start img, .btn-action img {
