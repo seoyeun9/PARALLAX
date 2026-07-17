@@ -57,6 +57,7 @@ body {
       display: block;
     }
 
+
 .celestial-chart {
   position: absolute;
   width: 130%;
@@ -81,9 +82,10 @@ body {
   transform: rotate(360deg); /* 180도 부드럽게 회전 */
 }
 
+
 .brand-header {
   position: absolute;
-  width: 100%;
+  width: 60%;
   top: 95px;
   
   left: 50%;
@@ -99,6 +101,19 @@ body {
       height: auto;
       display: block;
     }
+
+.logo-star {
+  position: absolute;
+  width: 60%;
+  top: 185px;
+  
+  left: 50%;
+  transform: translateX(-50%);
+
+  pointer-events: none;
+
+  z-index: 10;
+}
 
 .screen {
   position: absolute;
@@ -130,7 +145,7 @@ button {
   cursor: pointer;
   outline: none;
 
-  z-index: 10;
+  z-index: 30;
 }
 
 .btn-start img, .btn-action img {
