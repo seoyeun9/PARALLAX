@@ -115,6 +115,13 @@ body {
   z-index: 10;
 }
 
+    .logo-star img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+
 .screen {
   position: absolute;
   top: 0;
