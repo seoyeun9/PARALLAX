@@ -1,0 +1,102 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+body {
+  background-color: #1D1D2B;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+
+  font-family: avenir-next-lt-pro-condensed, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+
+  color: #E8EAF6;
+  overflow: hidden;
+}
+
+
+.game-container {
+  position: relative;
+  width: 100%;
+  max-width: 430px; 
+  height: 100vh;
+
+  background-image: 
+    url('assets/bg.png');
+  
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  
+  overflow: hidden;
+}
+
+
+.border-frame {
+  position: absolute;
+  width: calc((390 / 402) * 100vw)
+  align-items: center;
+
+  pointer-events: none;
+  
+  z-index: 3;
+}
+
+.celestial-chart {
+  position: absolute;
+  bottom: -180px; /* 아래로 살짝 내리기 */
+  align-items: center;
+  
+  width: calc((581 / 402) * 100vw)
+
+  transition: transform 3s cubic-bezier(0.25, 1, 0.5, 1);
+  z-index: 10;
+}
+
+
+.celestial-chart.spinning {
+  transform: rotate(360deg); /* 180도 부드럽게 회전 */
+}
+
+
+.screen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 40px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.8s ease, visibility 0.8s ease;
+  z-index: 2;
+}
+
+/* 활성화된 화면만 보이게 처리 */
+.screen.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* 버튼 기본 스타일링 (SVG 리소스를 올릴 래퍼) */
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.btn-start img, .btn-action img {
+  width: 100%;
+  display: block;
+}
