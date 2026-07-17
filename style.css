@@ -42,14 +42,16 @@ body {
   position: absolute;
   width: 100%;
 
+  top: 7px;
+  left: 6px;
+
   pointer-events: none;
   
   z-index: 3;
 }
 
 .line {
-  width: calc((390 / 402) * 100vw);
-  align-items: center;
+  width: 390px;
 }
 
 .celestial-chart {
@@ -57,7 +59,7 @@ body {
   bottom: -180px;
   align-items: center;
   
-  width: calc((581 / 402) * 100vw)
+  width: calc((581 / 402) * 100vw);
 
   transition: transform 3s cubic-bezier(0.25, 1, 0.5, 1);
   z-index: 10;
