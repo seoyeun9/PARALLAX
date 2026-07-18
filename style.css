@@ -60,6 +60,11 @@ body {
         }
 
 
+.homeScreen{
+  overflow: hidden;
+}
+
+
 .loading-content {
   position: absolute;
   top: 155px;
