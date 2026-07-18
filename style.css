@@ -163,8 +163,6 @@ body {
 
 .scenario-title {
   top: 7%;
-  left: 50%;
-  transform: translateX(-50%);
   
   pointer-events: none;
             
@@ -192,11 +190,7 @@ body {
      }
           
           
-.scenario-text-box {
-  position: absolute;
-  top: 30%;
-  left: 50%;
-  transform: translateX(-50%);
+.scenario-text-box {  
   width: 100%;
   max-height: 47%;
             
@@ -230,24 +224,20 @@ body {
             font-weight: 700;
           }
           
-          .scenario-illustration {
-            position: absolute;
-            width: 80%;
-            top: 12%;
-            
-            left: 50%;
-            transform: translateX(-50%);
+.scenario-illustration {
+  width: 80%;
+  top: 12%;
           
-            pointer-events: none;
+  pointer-events: none;
           
-            z-index: 10;
+  z-index: 10;
+}
+          
+          .scenario-illustration img {
+            width: 100%;
+            height: auto;
+            display: block;
           }
-          
-                  .scenario-illustration img {
-                    width: 100%;
-                    height: auto;
-                    display: block;
-                  }
 
 .screen {
   position: absolute;
