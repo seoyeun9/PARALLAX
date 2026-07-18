@@ -24,6 +24,10 @@ btnStart.addEventListener('click', () => {
   // 4. 2.5초 로딩 후 시나리오 창으로 최종 전환
   setTimeout(() => {
     loadingScreen.classList.remove('active');
+
+    if (celestialChart) {
+      celestialChart.classList.add('fade-out');
+    }
     
     setTimeout(() => {
       scenarioScreen.classList.add('active');
