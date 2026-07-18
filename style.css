@@ -153,22 +153,23 @@ body {
   visibility: visible;
 }
 
-
-.loading-text { 
-  font-family: source-han-serif-kr-subset, sans-serif;
-  font-size: clamp(18px, calc((20 / 1728) * 100vw), 20px);
-  font-weight: 900;
-  font-style: normal;
-  line-height: 0.8;
-
-  color: #E8EAF6;
-                    
-  left: 50%;
-  transform: translateX(-50%);
-
+.loading-content {
+  position: absolute;
+  top: 155px;
   pointer-events: none;
-  z-index: 10;
 }
+
+    .loading-text { 
+      font-family: source-han-serif-kr-subset, sans-serif;
+      font-size: clamp(18px, calc((20 / 1728) * 100vw), 20px);
+      font-weight: 900;
+      font-style: normal;
+      line-height: 0.8;
+    
+      color: #E8EAF6;
+      
+      z-index: 10;
+    }
 
 button {
   position: absolute;
@@ -180,7 +181,7 @@ button {
   cursor: pointer;
   outline: none;
 
-  z-index: 30;
+  z-index: 10;
 }
 
 .btn-start img, .btn-action img {
