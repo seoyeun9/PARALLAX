@@ -152,9 +152,17 @@ body {
         }
 
 
+#scenarioScreen {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  
+  background-color: transparent; 
+}
+
 .scenario-title {
   position: absolute;
-  top: 155px;
+  top: 7%;
   pointer-events: none;
   
   color: #E8EAF6;
@@ -166,8 +174,8 @@ body {
           font-weight: 400;
           font-style: normal;
           line-height: 0.8;
-          
-          z-index: 10;
+
+          margin: 0 0 5% 0;
         }
 
         .scenario-name { 
@@ -213,7 +221,7 @@ body {
 .scenario-illustration {
   position: absolute;
   width: 80%;
-  top: 50%;
+  top: 12%;
   
   left: 50%;
   transform: translateX(-50%);
