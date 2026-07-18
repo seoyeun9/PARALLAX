@@ -18,6 +18,8 @@ body {
 
   color: #E8EAF6;
   overflow: hidden;
+
+  text-align: justify;
 }
 
 
@@ -56,6 +58,7 @@ body {
           height: auto;
           display: block;
         }
+
 
 .loading-content {
   position: absolute;
@@ -151,13 +154,16 @@ body {
           display: block;
         }
 
+
 #scenarioScreen {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
   align-items: center;
   height: 100%;
   box-sizing: border-box;
+
   overflow-y: auto;
   overflow-x: hidden;
 }
@@ -190,38 +196,20 @@ body {
       z-index: 10;
      }
           
-          
-.scenario-text-box {  
-  width: 100%;
-  max-height: 47%;
-            
-  overflow-y: auto;
-  margin: 90px 0 0 0;
-  padding: 0 10%;
-  
-  font-family: avenir-next-lt-pro-condensed, sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 16px;
-            
-  line-height: 1.8;
-  color: #E8EAF6;
-              
-  text-align: justify;
+
+.scenario-text-box p {
+  margin-bottom: 25px;
+}
+                      
+.scenario-text-box p:last-child {
+  margin-bottom: 0;
+}
+                      
+.scenario-text-box strong {
+  font-weight: 700;
 }
 
-        .scenario-text-box p {
-           margin-bottom: 45px;
-          }
-                      
-        .scenario-text-box p:last-child {
-          margin-bottom: 0;
-         }
-                      
-        .scenario-text-box strong {
-          font-weight: 700;
-         }
-          
+
 .scenario-illustration {
   width: 80%;
   top: 12%;
@@ -229,13 +217,13 @@ body {
   pointer-events: none;
           
   z-index: 10;
-}
-          
+}          
           .scenario-illustration img {
             width: 100%;
             height: auto;
             display: block;
           }
+
 
 .screen {
   position: absolute;
@@ -243,7 +231,9 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  padding: 40px 30px;
+  
+  padding: 70px 40px;
+  
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -290,7 +280,6 @@ body {
   align-items: center;
   width: 100%;
   gap: 12px;
-  margin-bottom: 20px;
 }
 
 .btn-shuffle, .btn-cc {
