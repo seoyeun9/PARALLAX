@@ -309,17 +309,23 @@ body {
 }
 
 
-
-
-.scenario-title-sub {
-  display: flow;
-  
-  text-align: center;
-  color: #E8EAF6;
-  width: 100%;
+.title-container {
   position: relative;
+      
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+        
+  width: 100%;
   margin-bottom: 10px;
 }
+
+      .scenario-title-sub {
+        display: flex;
+        align-items: center;
+      }
 
       .sub-text {
         font-size: 14px;
