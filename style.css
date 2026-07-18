@@ -20,7 +20,7 @@ body {
   overflow: hidden;
 
   text-align: justify;
-}
+}ee
 
 
 .game-container {
@@ -364,28 +364,32 @@ body {
   margin-bottom: 0px;
 }
 
-      .name-input-box {
-        width: 100%;
-        height: 55px;
-        border: 1px solid #E8EAF6;
-        border-radius: 8px;
-        background-color: rgba(29, 29, 43, 1.0);
-        color: #E8EAF6;
-        display: flex;
-        align-items: center;
-        padding: 0 20px;
-        font-family: source-han-serif-kr-subset, sans-serif;
-        font-weight: 900;
-        font-size: 12px;
-        cursor: pointer;
-        opacity: 0.5;
-        transition: all 0.3s ease;
+      .name-box {
+        margin-bottom: 60px;
       }
 
-      .name-input-box.filled {
-        opacity: 1;
-        border-color: #E8EAF6;
-      }
+            .name-input-box {
+              width: 100%;
+              height: 55px;
+              border: 1px solid #E8EAF6;
+              border-radius: 8px;
+              background-color: rgba(29, 29, 43, 1.0);
+              color: #E8EAF6;
+              display: flex;
+              align-items: center;
+              padding: 0 20px;
+              font-family: source-han-serif-kr-subset, sans-serif;
+              font-weight: 900;
+              font-size: 12px;
+              cursor: pointer;
+              opacity: 0.5;
+              transition: all 0.3s ease;
+            }
+      
+            .name-input-box.filled {
+              opacity: 1;
+              border-color: #E8EAF6;
+            }
 
 
 .btn-css-style {
@@ -433,9 +437,9 @@ body {
       }
       
       .card-avatar {
-        width: 60px;         /* 시안 속 말판 크기에 맞게 조정 */
+        width: 60px; 
         height: 60px;
-        margin: 0 auto 25px auto; /* 가로 중앙 정렬 + 이름과의 간격 */
+        margin: 0 auto 25px auto;
         display: flex;
         justify-content: center;
         align-items: center;
