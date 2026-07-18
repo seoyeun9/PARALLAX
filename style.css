@@ -61,7 +61,7 @@ body {
 .celestial-chart {
   position: absolute;
   width: 130%;
-  bottom: -95px;
+  bottom: -180px;
   
   left: 50%;
   transform: translateX(-50%); /* 화면 좌우 정중앙 정렬 */
