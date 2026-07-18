@@ -12,7 +12,7 @@ const playersScreen = document.getElementById('playersScreen');
 const resultScreen = document.getElementById('resultScreen');
 
 // 셔플 및 이름 입력 관련 변수들
-const btnShuffle = document.getElementById('btnShuffle'); 
+const btnShuffle = document.getElementById('.btn-shuffle'); 
 const btnActionShuffle = document.getElementById('btnActionShuffle'); 
 const pickedPlayerName = document.getElementById('pickedPlayerName');
 
