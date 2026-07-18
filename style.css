@@ -27,7 +27,7 @@ body {
   position: relative;
   width: 100%;
   max-width: 430px; 
-  height: 100dvh;
+  height: 100vh;
 
   background-image: 
     url('assets/bg.png');
