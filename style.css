@@ -151,6 +151,11 @@ body {
           display: block;
         }
 
+#scenarioScreen {
+  overflow-y: auto; 
+  display: block; 
+}
+
 .scenario-title {
   position: absolute;
   top: 7%;
@@ -282,7 +287,7 @@ button {
   align-items: center;
 }
 
-    .btn-shuffle img, btn-cc img {
+    .btn-shuffle img btn-cc img {
         width: 50%;
         display: block;
     }
