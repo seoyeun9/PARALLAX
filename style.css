@@ -79,7 +79,7 @@ body {
     }
 
 .celestial-chart.spinning {
-  transform: rotate(360deg); /* 180도 부드럽게 회전 */
+  transform: translateX(-50%) rotate(180deg);
 }
 
 
