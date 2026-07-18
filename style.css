@@ -439,8 +439,9 @@ body {
 
 
 #resultScreen {
-  display: flow;
+  display: flex;
   max-height: 650px;
+  align-items: center;
 }
 
 .result-card {
@@ -471,6 +472,7 @@ body {
       .card-avatar {
         width: 40px;
         height: 90px;
+        margin-bottom: 30px;
       }
 
             .card-avatar img {
@@ -479,7 +481,7 @@ body {
               display: block;
             }
 
-      
+   
       .picked-name {
         font-family: source-han-serif-kr-subset, sans-serif;
         font-size: 14px;
