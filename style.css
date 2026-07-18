@@ -447,6 +447,10 @@ body {
   width: 85%;
   max-width: 330px;
 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
   background-image: url('assets/card.png');
   background-size: 100% 100%;
   background-position: center;
@@ -465,12 +469,8 @@ body {
       }
       
       .card-avatar {
-        width: 60px; 
-        height: 60px;
-        margin: 0 auto 25px auto;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        width: 40px;
+        height: 90px;
       }
 
             .card-avatar img {
@@ -496,3 +496,12 @@ body {
         padding: 0 10px;
         text-align: justify;
       }
+
+#btnChooseDone {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    z-index: 99;
+}
