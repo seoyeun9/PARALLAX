@@ -312,8 +312,8 @@ body {
 
 
 #playersScreen {
-  position: relative;
-  padding-bottom: 80px;
+  display: flow;
+  max-height: 700px;
 }
 
 .title-container {
@@ -363,7 +363,7 @@ body {
 #btnActionShuffle {
   position: absolute;
   
-  bottom: 30px;
+  bottom: 0;
   left: 50%;
   transform: translateX(-50%);
   
