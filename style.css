@@ -193,19 +193,26 @@ body {
           
           
 .scenario-text-box {
-  width: 100%;
-  flex: 1;
-  min-height: 0;
-  overflow-y: auto;
-  
-  margin: 20px 0;
-  padding: 0 10%;
-  font-family: avenir-next-lt-pro-condensed, sans-serif;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 1.8;
-  color: #E8EAF6;
-  text-align: justify;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-height: 47%;
+            
+  overflow-y: auto;
+  margin: 90px 0 0 0;
+  padding: 0 10%;
+            
+  font-family: avenir-next-lt-pro-condensed, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+            
+  line-height: 1.8;
+  color: #E8EAF6;
+              
+  text-align: justify;
 }
 
 .scenario-text-box::-webkit-scrollbar { display: none; }
@@ -266,7 +273,7 @@ body {
 }
 
 
-btn-start {
+.btn-start {
   position: absolute;
   width: 70%;
   
