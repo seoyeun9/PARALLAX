@@ -57,14 +57,31 @@ body {
           display: block;
         }
 
+.loading-content {
+  position: absolute;
+  top: 155px;
+  pointer-events: none;
+}
+
+        .loading-text { 
+          font-family: source-han-serif-kr-subset, sans-serif;
+          font-size: clamp(18px, calc((20 / 1728) * 100vw), 20px);
+          font-weight: 900;
+          font-style: normal;
+          line-height: 0.8;
+        
+          color: #E8EAF6;
+          
+          z-index: 10;
+        }
 
 .celestial-chart {
   position: absolute;
   width: 130%;
-  bottom: -180px;
+  bottom: -20%;
   
   left: 50%;
-  transform: translateX(-50%) transform 5s cubic-bezier(0.25, 1, 0.5, 1);
+  transform: translateX(-50%);
   opacity: 1;
   
   pointer-events: none;
@@ -135,6 +152,24 @@ body {
         }
 
 
+.scenario-content {
+  position: absolute;
+  top: 155px;
+  pointer-events: none;
+}
+
+        .loading-text { 
+          font-family: source-han-serif-kr-subset, sans-serif;
+          font-size: clamp(18px, calc((20 / 1728) * 100vw), 20px);
+          font-weight: 900;
+          font-style: normal;
+          line-height: 0.8;
+        
+          color: #E8EAF6;
+          
+          z-index: 10;
+        }
+
 .screen {
   position: absolute;
   top: 0;
@@ -158,23 +193,6 @@ body {
   visibility: visible;
 }
 
-.loading-content {
-  position: absolute;
-  top: 155px;
-  pointer-events: none;
-}
-
-        .loading-text { 
-          font-family: source-han-serif-kr-subset, sans-serif;
-          font-size: clamp(18px, calc((20 / 1728) * 100vw), 20px);
-          font-weight: 900;
-          font-style: normal;
-          line-height: 0.8;
-        
-          color: #E8EAF6;
-          
-          z-index: 10;
-        }
 
 button {
   position: absolute;
