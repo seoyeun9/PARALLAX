@@ -187,7 +187,8 @@ body {
   max-height: 54%;
             
   overflow-y: auto;
-  padding: 20% 10% 10%;
+  margin: 90px 0 0 0;
+  padding: 0 10%;
             
   font-family: avenir-next-lt-pro-condensed, sans-serif;
   font-weight: 400;
