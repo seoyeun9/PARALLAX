@@ -146,9 +146,25 @@ body {
 }
 
 
+.loading-text { 
+  font-family: source-han-serif-kr-subset, sans-serif;
+  font-size: clamp(18px, calc((20 / 1728) * 100vw), 20px);
+  font-weight: 900;
+  font-style: normal;
+  line-height: 0.8;
+
+  color: #E8EAF6;
+                    
+  left: 50%;
+  transform: translateX(-50%);
+
+  pointer-events: none;
+  z-index: 10;
+}
+
 button {
   position: absolute;
-  width: 55%;
+  width: 70%;
   top: 45%;
   
   background: none;
@@ -163,3 +179,4 @@ button {
   width: 100%;
   display: block;
 }
+
