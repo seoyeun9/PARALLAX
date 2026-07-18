@@ -208,10 +208,6 @@ body {
               
   text-align: justify;
 }
-
-.scenario-text-box::-webkit-scrollbar { display: none; }
-.scenario-text-box { -ms-overflow-style: none; scrollbar-width: none; }
-
          .scenario-text-box p {
            margin-bottom: 45px;
           }
