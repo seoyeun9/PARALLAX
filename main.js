@@ -90,6 +90,7 @@ document.querySelectorAll('.name-input-box').forEach((box) => {
 });
 
 
+let selectedPlayer = '';
 // ==========================================
 // 5. 플레이어 입력 완료 ➔ 랜덤 셔플 결과 화면 이동
 // ==========================================
@@ -112,5 +113,23 @@ if (btnActionShuffle) {
     // 최종 화면 전환
     playersScreen.classList.remove('active');
     resultScreen.classList.add('active');
+  });
+}
+
+
+
+// ==========================================
+// 6. 결과 화면 ➔ 인게임 Idle 화면 이동 (새 페이지 전환)
+// ==========================================
+const btnChooseDone = document.getElementById('btnChooseDone');
+
+if (btnChooseDone) {
+  btnChooseDone.addEventListener('click', () => {
+    // 💡 [수정] 늘 'Player 3'만 저장되는 대신, 실제 셔플로 뽑힌 이름을 세션/로컬에 저장!
+    // 만약 예외 상황으로 비어있다면 기본값으로 'Player 3'를 줍니다.
+    localStorage.setItem('currentPlayer', selectedPlayer || '. . .');
+
+    // ➔ WHITEOUT.html 페이지로 이동
+    window.location.href = 'WHITEOUT.html';
   });
 }
