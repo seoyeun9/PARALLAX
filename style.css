@@ -34,7 +34,7 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 
@@ -78,7 +78,7 @@ body {
 .celestial-chart {
   position: absolute;
   width: 130%;
-  bottom: -20%;
+  bottom: -25%;
   
   left: 50%;
   transform: translateX(-50%);
@@ -160,82 +160,85 @@ body {
   background-color: transparent; 
 }
 
-.scenario-title {
-  position: absolute;
-  top: 7%;
-  pointer-events: none;
-  
-  color: #E8EAF6;
-}
-
-        .universe-num { 
-          font-family: avenir-next-lt-pro-condensed, sans-serif;
-          font-size: 12px;
-          font-weight: 400;
-          font-style: normal;
-          line-height: 0.8;
-
-          margin: 0 0 5% 0;
-        }
-
-        .scenario-name { 
-          font-family: source-han-serif-kr-subset, sans-serif;
-          font-size: clamp(18px, calc((20 / 1728) * 100vw), 20px);
-          font-weight: 900;
-          font-style: normal;
-          line-height: 0.8;
-          
-          z-index: 10;
-        }
-
-
-.scenario-text-box {
-  width: 100%;
-  overflow-y: auto;
-  padding: 20%;
-  
-  font-family: avenir-next-lt-pro-condensed, sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 16px;
-  
-  line-height: 1.8;
-  color: #E8EAF6
-    
-  text-align: justified;
-}
-
-          .scenario-text-box p {
-            margin-bottom: 45px;
-          }
-          
-          .scenario-text-box p:last-child {
-            margin-bottom: 0;
-          }
-          
-          .scenario-text-box strong {
+          .scenario-title {
+            position: absolute;
+            top: 7%;
+            pointer-events: none;
+            
             color: #E8EAF6;
-            font-weight: 700;
           }
-
-.scenario-illustration {
-  position: absolute;
-  width: 80%;
-  top: 12%;
-  
-  left: 50%;
-  transform: translateX(-50%);
-
-  pointer-events: none;
-
-  z-index: 10;
-}
-
-        .scenario-illustration img {
-          width: 100%;
-          height: auto;
-          display: block;
-        }
+          
+                  .universe-num { 
+                    font-family: avenir-next-lt-pro-condensed, sans-serif;
+                    font-size: 12px;
+                    font-weight: 400;
+                    font-style: normal;
+                    line-height: 0.8;
+          
+                    margin: 0 0 5% 0;
+                  }
+          
+                  .scenario-name { 
+                    font-family: source-han-serif-kr-subset, sans-serif;
+                    font-size: clamp(18px, calc((20 / 1728) * 100vw), 20px);
+                    font-weight: 900;
+                    font-style: normal;
+                    line-height: 0.8;
+                    
+                    z-index: 10;
+                  }
+          
+          
+          .scenario-text-box {
+            position: absolute;
+            top: 27%;
+            width: 100%;
+            max-height: 60%;
+            
+            overflow-y: auto;
+            padding: 20% 10% 10%;
+            
+            font-family: avenir-next-lt-pro-condensed, sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 16px;
+            
+            line-height: 1.8;
+            color: #E8EAF6;
+              
+            text-align: justify;
+          }
+          
+                    .scenario-text-box p {
+                      margin-bottom: 45px;
+                    }
+                    
+                    .scenario-text-box p:last-child {
+                      margin-bottom: 0;
+                    }
+                    
+                    .scenario-text-box strong {
+                      font-weight: 700;
+                    }
+          
+          .scenario-illustration {
+            position: absolute;
+            width: 80%;
+            top: 12%;
+            
+            left: 50%;
+            transform: translateX(-50%);
+          
+            pointer-events: none;
+          
+            z-index: 10;
+          }
+          
+                  .scenario-illustration img {
+                    width: 100%;
+                    height: auto;
+                    display: block;
+                  }
 
 .screen {
   position: absolute;
