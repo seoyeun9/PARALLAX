@@ -269,8 +269,20 @@ button {
   z-index: 10;
 }
 
-.btn-start img, .btn-action img {
+
+.btn-start img {
   width: 100%;
   display: block;
 }
 
+.btn-group {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+    .btn-shuffle img, btn-cc img {
+        width: 50%;
+        display: block;
+    }
