@@ -40,6 +40,8 @@
       <img src="assets/line.png" class="border-frame" alt="line">
     </div>
 
+
+    
         <section class="default">
             <div class="celestial-chart" id="celestialChart">
               <div class="chart-rotate-wrap">
@@ -61,7 +63,8 @@
                     <img src="assets/start.png" alt="Start the game">
                   </div>
             </section>
-        
+
+          
         
             <section class="screen" id="loadingScreen">
               <div class="loading-content">
@@ -69,7 +72,9 @@
               </div>
             </section>
         </section>
-      
+
+
+    
         <section class="screen" id="scenarioScreen">
             <div class="scenario-title">
               <p class="universe-num">universe 5</p>
@@ -107,6 +112,57 @@
             </div>
         </section>
 
+
+    
+        <section class="screen" id="playersScreen">
+            <div class="scenario-title-sub">
+              <p class="universe-num">universe 5</p>
+              <h2 class="scenario-name">WHITEOUT <span class="sub-text">Shuffle</span></h2>
+            </div>
+            
+            <div class="players-intro">
+              <h3>Now, let's change your identity with your friends...</h3>
+              <p>Type player's name and click the shuffle button.</p>
+            </div>
+
+            <div class="input-container">
+              <div class="name-input-box" data-index="1">Name</div>
+              <div class="name-input-box" data-index="2">Name</div>
+              <div class="name-input-box" data-index="3">Name</div>
+              <div class="name-input-box" data-index="4">Name</div>
+              <div class="name-input-box" data-index="5">Name</div>
+              <div class="name-input-box" data-index="6">Name</div>
+            </div>
+
+            <button class="btn-css-style disabled" id="btnActionShuffle">Shuffle</button>
+        </section>
+
+
+    
+        <section class="screen" id="resultScreen">
+            <div class="scenario-title-sub">
+              <p class="universe-num">universe 5</p>
+              <h2 class="scenario-name">WHITEOUT <span class="sub-text">Shuffle</span></h2>
+            </div>
+            
+            <div class="players-intro">
+              <h3>Now, let's change your identity with your friends...</h3>
+              <p>Type player's name and click the shuffle button.</p>
+            </div>
+
+            <div class="result-card">
+              <p class="card-title">You are..</p>
+              <div class="card-avatar">
+                <img src="assets/pawn.png" alt="Pawn">
+              </div>
+              
+              <h3 class="picked-name" id="pickedPlayerName">. . .</h3>
+              <p class="card-desc">Now you became this person. Whenever you face the decision refer to this person's personality and perspectives to make a decision.</p>
+            </div>
+
+            <button class="btn-css-style" id="btnChooseDone">Choose Character</button>
+        </section>
+    
   </div>
 
   <script src="main.js"></script>
