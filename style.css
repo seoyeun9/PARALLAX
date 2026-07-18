@@ -285,9 +285,19 @@ button {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  
+  width: 100%;
+  
+  gap: 12px
 }
 
-    .btn-shuffle img btn-cc img {
+    .btn-shuffle, .btn-cc {
+        flex: 1;
         width: 50%;
-        display: block;
+    }
+
+    .btn-shuffle img, .btn-cc img {
+      width: 100%;
+      height: auto;
+      display: block;
     }
