@@ -569,3 +569,8 @@ body {
   
   gap: 10px;
 }
+
+.situation-content {
+  display: flow;
+  max-height: 650px;
+}
