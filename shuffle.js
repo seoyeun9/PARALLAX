@@ -34,9 +34,6 @@ nameInputBoxes.forEach((input) => {
   });
 });
 
-// ==========================================
-// 3. 랜덤 셔플 작동 및 결과 탭 노출
-// ==========================================
 if (btnActionShuffle) {
   btnActionShuffle.addEventListener('click', () => {
     if (btnActionShuffle.classList.contains('disabled')) return;
@@ -57,9 +54,7 @@ if (btnActionShuffle) {
   });
 }
 
-// ==========================================
-// 4. 최종 검증 완료 후 메인 인게임 루프로 이동
-// ==========================================
+
 if (btnChooseDone) {
   btnChooseDone.addEventListener('click', () => {
     // 실제 셔플로 뽑힌 진짜 입력값을 로컬 스토리지에 저장
@@ -69,3 +64,14 @@ if (btnChooseDone) {
     window.location.href = 'WHITEOUT.html';
   });
 }
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const pickedPlayerNameHtml = document.getElementById('pickedPlayerName');
+  
+  const savedWinner = localStorage.getItem('currentPlayer');
+
+  if (pickedPlayerNameHtml && savedWinner) {
+    pickedPlayerNameHtml.textContent = savedWinner;
+  }
+});
