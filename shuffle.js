@@ -58,8 +58,8 @@ if (btnActionShuffle) {
 if (btnChooseDone) {
   btnChooseDone.addEventListener('click', () => {
     // 실제 셔플로 뽑힌 진짜 입력값을 로컬 스토리지에 저장
-    localStorage.setItem('currentPlayer', selectedPlayer || '. . .');
-
+    sessionStorage.setItem('currentPlayer', selectedPlayer || '. . .');
+    
     // ➔ WHITEOUT.html 페이지로 이동
     window.location.href = 'WHITEOUT.html';
   });
