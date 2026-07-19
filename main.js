@@ -104,18 +104,15 @@ document.addEventListener('DOMContentLoaded', () => {
     // 2️⃣ "Save it" 패널티로 인해 '다른 캐릭터들'의 피가 깎였을 때의 연동
     // ------------------------------------------
     // 장부에서 현재 당첨된 캐릭터가 아닌 '다른 캐릭터' 아무나 한 명 찾아옵니다.
-    const otherCharacterName = Object.keys(playerHealth).find(name => name !== currentWinner);
-    
-    if (otherCharacterName) {
-      const otherHp = playerHealth[otherCharacterName];
+const otherPlayers = Object.keys(playerHealth).filter(name => name !== currentWinner);
 
-      // 만약 다른 동료들의 피가 1.0에서 0으로 깎인 상태라면?
-      if (otherHp <= 0) {
-        // 두 번째 하트의 불투명도(opacity)를 50%로 낮춰서 패널티를 시각화합니다!
-        hearts[1].style.opacity = '0.5';
+    if (otherPlayers.length > 0) {
+      const isAllOthersDead = otherPlayers.every(name => playerHealth[name] <= 0);
+    
+      if (isAllOthersDead) {
+        hearts[0].style.opacity = '0.5';
       } else {
-        // 동료들이 멀쩡하다면 원래대로 선명하게 유지
-        hearts[1].style.opacity = '1.0';
+        hearts[0].style.opacity = '1.0';
       }
     }
   }
