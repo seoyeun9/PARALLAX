@@ -535,8 +535,9 @@ body {
 }
 
 .card-pull-zone {
-  width: 100%;
-          
+  position: relative;
+  width: 150%;
+  bottom: 115px;
   z-index: 10;
 }          
           .card-pull-zone img {
