@@ -67,28 +67,56 @@ if (btnPullCard) {
 
 
 document.addEventListener('DOMContentLoaded', () => {
-  // 1. 현재 셔플로 매칭된 플레이어 이름 가져오기
+  // 1. 현재 화면에 당첨자로 표시된 캐릭터 이름 가져오기 ('린' 등)
   const currentWinner = sessionStorage.getItem('currentPlayer');
   
-  // 2. 전체 플레이어들의 체력 장부(Object) 가져오기
+  // 2. 전체 캐릭터들의 체력 장부 가져오기
   const playerHealth = JSON.parse(sessionStorage.getItem('playerHealth')) || {};
   
-  // 3. 화면에 있는 하트 이미지(8개) 전부 긁어오기
+  // 3. 화면에 있는 하트 이미지들 긁어오기
   const hearts = document.querySelectorAll('.heart-container .heart');
 
-  // 현재 매칭된 유저가 있고, 체력 데이터가 기록되어 있으며, 하트 엘리먼트가 존재할 때만 실행
+  // 화면에 당첨자 캐릭터가 표시되어 있고, 장부에 데이터가 있을 때만 실행
   if (currentWinner && playerHealth[currentWinner] !== undefined && hearts.length > 0) {
-    const hp = playerHealth[currentWinner];
+    
+    // ------------------------------------------
+    // 1️⃣ 당첨된 캐릭터 본인의 체력에 따른 하트 연동
+    // ------------------------------------------
+    const characterHp = playerHealth[currentWinner];
 
-    // 💡 체력이 0.5로 반토막 난 상태라면?
-    if (hp === 0.5) {
-      // 가장 첫 번째 하트(index 0)의 이미지를 반쪽 하트로 교체!
+    if (characterHp === 0.5) {
+      // 체력이 0.5면 첫 번째 하트를 반쪽 하트로 갈아끼우고 선명하게 표시
       hearts[0].src = 'assets/half_heart.png';
+      hearts[0].style.opacity = '1.0';
     } 
-    // 💡 체력이 0이 되어 아예 다 닳았다면?
-    else if (hp <= 0) {
-      // 첫 번째 하트를 화면에서 아예 숨김 처리
+    else if (characterHp <= 0) {
+      // 체력이 0 이하면 첫 번째 하트를 안 보이게 처리
       hearts[0].style.visibility = 'hidden';
+    } 
+    else {
+      // 체력이 1.0 완치 상태라면 기본 꽉 찬 하트로 복구
+      hearts[0].src = 'assets/heart_full.png';
+      hearts[0].style.opacity = '1.0';
+      hearts[0].style.visibility = 'visible';
+    }
+
+    // ------------------------------------------
+    // 2️⃣ "Save it" 패널티로 인해 '다른 캐릭터들'의 피가 깎였을 때의 연동
+    // ------------------------------------------
+    // 장부에서 현재 당첨된 캐릭터가 아닌 '다른 캐릭터' 아무나 한 명 찾아옵니다.
+    const otherCharacterName = Object.keys(playerHealth).find(name => name !== currentWinner);
+    
+    if (otherCharacterName) {
+      const otherHp = playerHealth[otherCharacterName];
+
+      // 만약 다른 동료들의 피가 1.0에서 0으로 깎인 상태라면?
+      if (otherHp <= 0) {
+        // 두 번째 하트의 불투명도(opacity)를 50%로 낮춰서 패널티를 시각화합니다!
+        hearts[1].style.opacity = '0.5';
+      } else {
+        // 동료들이 멀쩡하다면 원래대로 선명하게 유지
+        hearts[1].style.opacity = '1.0';
+      }
     }
   }
 });
