@@ -549,7 +549,7 @@ body {
 .card-pull-zone {
   position: relative;
   width: 150%;
-  bottom: 115px;
+  bottom: -35px;
   z-index: 99;
 }          
           .card-pull-zone img {
@@ -564,8 +564,8 @@ body {
   
   display: flex;
   flex-direction: column;
-  
   align-items: center;
   justify-content: flex-start;
-}
+  
+  gap: 10px;
 }
