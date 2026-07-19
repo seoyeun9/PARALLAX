@@ -3,32 +3,33 @@ document.addEventListener('DOMContentLoaded', () => {
   const btnMoveOn = document.getElementById('btnMoveOn');
 
   if (newPlayerInput && btnMoveOn) {
-    
-
     newPlayerInput.addEventListener('input', () => {
-      const name = newPlayerInput.value.trim();
-
-      if (name !== '') {
-
+      if (newPlayerInput.value.trim() !== '') {
         newPlayerInput.classList.add('filled');
         btnMoveOn.classList.remove('disabled');
       } else {
-
         newPlayerInput.classList.remove('filled');
         btnMoveOn.classList.add('disabled');
       }
     });
 
-
     btnMoveOn.addEventListener('click', () => {
-
       if (btnMoveOn.classList.contains('disabled')) return;
       
-      localStorage.setItem('chosenPlayer', newPlayerInput.value.trim());
-
+      const targetName = newPlayerInput.value.trim();
+      
+      let playerHealth = JSON.parse(localStorage.getItem('playerHealth')) || {};
+      
+      if (playerHealth[targetName] === undefined) {
+        playerHealth[targetName] = 1.0; 
+      }
+      
+      playerHealth[targetName] = Math.max(0, playerHealth[targetName] - 0.5);
+      
+      localStorage.setItem('playerHealth', JSON.stringify(playerHealth));
+      localStorage.setItem('chosenPlayer', targetName); 
       
       window.location.href = 'result1.html';
     });
-
   }
 });
