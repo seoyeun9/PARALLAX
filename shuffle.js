@@ -1,34 +1,45 @@
-// 셔플 화면 요소 정의
 const playersScreen = document.getElementById('playersScreen');
 const resultScreen = document.getElementById('resultScreen');
 const btnActionShuffle = document.getElementById('btnActionShuffle'); 
 const pickedPlayerName = document.getElementById('pickedPlayerName');
 const btnChooseDone = document.getElementById('btnChooseDone');
 
+const playerInputField = document.getElementById('playerInputField');
+const btnAddPlayer = document.getElementById('btnAddPlayer');
+const nameInputBoxes = document.querySelectorAll('.name-input-box');
+
 let activePlayers = [];
 let selectedPlayer = '';
 
 
-document.querySelectorAll('.name-input-box').forEach((box) => {
-  box.addEventListener('click', function() {
-    const idx = this.getAttribute('data-index');
-    const playerName = `Player ${idx}`;
+if (btnAddPlayer && playerInputField) {
+  btnAddPlayer.addEventListener('click', () => {
+    const nameToAppend = playerInputField.value.trim();
     
-    if (!activePlayers.includes(playerName)) {
-      this.textContent = playerName;
-      this.classList.add('filled');
-      activePlayers.push(playerName);
+    if (!nameToAppend) return;
+    if (activePlayers.includes(nameToAppend)) {
+      alert('This name already exists!');
+      return;
     }
-    
-    if (activePlayers.length >= 2) {
-      if (btnActionShuffle) {
-        btnActionShuffle.classList.remove('disabled');
-      }
+
+    // 1. 데이터 배열에 이름 추가
+    activePlayers.push(nameToAppend);
+
+    const targetBox = nameInputBoxes[activePlayers.length - 1];
+    if (targetBox) {
+      targetBox.textContent = nameToAppend;
+      targetBox.classList.add('filled');
+    }
+
+    playerInputField.value = '';
+
+    if (activePlayers.length >= 2 && btnActionShuffle) {
+      btnActionShuffle.classList.remove('disabled');
     }
   });
-});
 
-// 랜덤 셔플 작동 및 결과 탭 노출
+
+
 if (btnActionShuffle) {
   btnActionShuffle.addEventListener('click', () => {
     if (btnActionShuffle.classList.contains('disabled')) return;
@@ -49,10 +60,10 @@ if (btnActionShuffle) {
   });
 }
 
+  
 if (btnChooseDone) {
   btnChooseDone.addEventListener('click', () => {
-    // 💡 [수정] 늘 'Player 3'만 저장되는 대신, 실제 셔플로 뽑힌 이름을 세션/로컬에 저장!
-    // 만약 예외 상황으로 비어있다면 기본값으로 'Player 3'를 줍니다.
+    // 실제 셔플로 뽑힌 이름을 세션/로컬에 저장!
     localStorage.setItem('currentPlayer', selectedPlayer || '. . .');
 
     // ➔ WHITEOUT.html 페이지로 이동
