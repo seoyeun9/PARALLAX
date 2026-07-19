@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     return; 
   }
-
+  
   const playerHealth = JSON.parse(playerHealthRaw);
   
   // 💡 장부에 등록된 모든 플레이어의 이름 배열 (예: ['나', '철수', '영희'])
