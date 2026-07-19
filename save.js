@@ -6,7 +6,6 @@ if (btnMoveOn) {
     const currentWinner = sessionStorage.getItem('currentPlayer');
     let playerHealth = JSON.parse(sessionStorage.getItem('playerHealth')) || {};
 
-
     Object.keys(playerHealth).forEach(playerName => {
       if (playerName !== currentWinner) {
 
