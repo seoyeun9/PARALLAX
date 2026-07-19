@@ -4,42 +4,39 @@ const btnActionShuffle = document.getElementById('btnActionShuffle');
 const pickedPlayerName = document.getElementById('pickedPlayerName');
 const btnChooseDone = document.getElementById('btnChooseDone');
 
-const playerInputField = document.getElementById('playerInputField');
-const btnAddPlayer = document.getElementById('btnAddPlayer');
 const nameInputBoxes = document.querySelectorAll('.name-input-box');
 
 let activePlayers = [];
 let selectedPlayer = '';
 
 
-if (btnAddPlayer && playerInputField) {
-  btnAddPlayer.addEventListener('click', () => {
-    const nameToAppend = playerInputField.value.trim();
+nameInputBoxes.forEach((input) => {
+
+  input.addEventListener('input', () => {
+    activePlayers = [];
     
-    if (!nameToAppend) return;
-    if (activePlayers.includes(nameToAppend)) {
-      alert('This name already exists!');
-      return;
-    }
+    nameInputBoxes.forEach((box) => {
+      const name = box.value.trim();
+      if (name !== '') {
+        activePlayers.push(name);
+        box.classList.add('filled');
+      } else {
+        box.classList.remove('filled');
+      }
+    });
 
-    // 1. 데이터 배열에 이름 추가
-    activePlayers.push(nameToAppend);
-
-    const targetBox = nameInputBoxes[activePlayers.length - 1];
-    if (targetBox) {
-      targetBox.textContent = nameToAppend;
-      targetBox.classList.add('filled');
-    }
-
-    playerInputField.value = '';
-
-    if (activePlayers.length >= 2 && btnActionShuffle) {
-      btnActionShuffle.classList.remove('disabled');
+    // 💡 최소 2명 이상 이름이 입력되면 Shuffle 버튼 활성화, 아니면 다시 비활성화!
+    if (activePlayers.length >= 2) {
+      if (btnActionShuffle) btnActionShuffle.classList.remove('disabled');
+    } else {
+      if (btnActionShuffle) btnActionShuffle.classList.add('disabled');
     }
   });
+});
 
-
-
+// ==========================================
+// 3. 랜덤 셔플 작동 및 결과 탭 노출
+// ==========================================
 if (btnActionShuffle) {
   btnActionShuffle.addEventListener('click', () => {
     if (btnActionShuffle.classList.contains('disabled')) return;
@@ -60,10 +57,12 @@ if (btnActionShuffle) {
   });
 }
 
-  
+// ==========================================
+// 4. 최종 검증 완료 후 메인 인게임 루프로 이동
+// ==========================================
 if (btnChooseDone) {
   btnChooseDone.addEventListener('click', () => {
-    // 실제 셔플로 뽑힌 이름을 세션/로컬에 저장!
+    // 실제 셔플로 뽑힌 진짜 입력값을 로컬 스토리지에 저장
     localStorage.setItem('currentPlayer', selectedPlayer || '. . .');
 
     // ➔ WHITEOUT.html 페이지로 이동
