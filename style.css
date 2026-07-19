@@ -518,7 +518,7 @@ body {
 
 #btnChooseDone {
     position: absolute;
-    bottom: 110px;
+    bottom: 230px;
     left: 50%;
     transform: translateX(-50%);
     width: 80%;
