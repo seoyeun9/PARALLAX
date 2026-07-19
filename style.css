@@ -462,22 +462,22 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   
-  padding: 0 25px 40px; 
+  padding: 0 25px 25px; 
   text-align: center;
   margin-bottom: 150px;
 }
 
       .card-title {
         font-size: 14px;
-        margin-top: 35px;
-        margin-bottom: 35px;
+        margin-top: 25px;
+        margin-bottom: 15px;
         color: #E8EAF6;
       }
       
       .card-avatar {
         width: 40px;
         height: 90px;
-        margin-bottom: 30px;
+        margin-bottom: 5px;
       }
 
             .card-avatar img {
@@ -491,7 +491,7 @@ body {
         font-family: source-han-serif-kr-subset, sans-serif;
         font-size: 14px;
         font-weight: 900;
-        margin-bottom: 30px;
+        margin-bottom: 15px;
         color: #E8EAF6;
         letter-spacing: 0.5px;
       }
