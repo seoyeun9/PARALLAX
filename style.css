@@ -585,3 +585,19 @@ body {
 
   gap: 15px;
 }
+
+
+.result-illustration {
+  position: absolute;
+  height: 50px;
+
+  pointer-events: none;
+
+  z-index: 10;
+}
+
+        .result-illustration img {
+          width: 100%;
+          height: auto;
+          display: block;
+        }
