@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="eng">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Shuffle</title>
+  <link rel="stylesheet" href="style.css">
+
+  <script>
+      (function(d) {
+        var config = {
+          kitId: 'ork8sug',
+          scriptTimeout: 3000,
+          async: true
+        },
+        h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+      })(document);
+  </script>
+
+</head>
+
+<body>
+    <div class="game-container">
+    
+    <div class="border-frame">
+      <img src="assets/line.png" class="border-frame" alt="line">
+    </div>
+
+      <header class="header">
+          <div class="title-container">
+              <div class="scenario-title-sub">
+                     <p class="universe-num">universe 5</p>
+                     <h2 class="scenario-name">WHITEOUT</h2>
+              </div>
+      
+              <div class="sub-text-container">
+                    <span class="sub-text">Day 1 Night</span>
+              </div>
+          </div>  
+      </header>
+
+      <section class="situation-content" id="situation-content">
+        
+          <div class="scenario-illustration">
+             <img src="assets/cabin.png" alt="Whiteout Cabin">
+          </div>
+          
+          <div class="scenario-text-box">                
+               <p><strong>The person who went out to the shed seems to have developed frostbite on foot</strong>. Fortunately, there is a first-aid kit inside the cabin.</p>
+                                
+               <p>However, the medicine inside is 
+                 <strong>a single-use only.<br>
+                   You might need it for an greater emergency later</strong></p>
+                        
+               <p>Should the first-aid kit be used to treat the patient now, or should it be saved for later?</p>      
+          </div>
+
+          <section class="bottom-container">                     
+              <button class="btn-css-style" id="btnUseIt">Use It</button>
+              <button class="btn-css-style" id="btnSaveIt">Save It</button>
+          </section>
+
+      </section>
+    </div>
+
+  <script src="situation2.js"></script>
+</body>
