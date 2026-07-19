@@ -14,23 +14,21 @@ const btnShuffle = document.querySelector('.btn-shuffle');
 // ==========================================
 if (btnStart) {
   btnStart.addEventListener('click', () => {
-    // 1. 홈 화면 비활성화
+    sessionStorage.clear(); 
+  
     homeScreen.classList.remove('active');
     
-    // 2. 내부 회전 박스 애니메이션 시작
     if (chartRotateWrap) {
       chartRotateWrap.classList.add('spinning');
     }
     
-    // 3. 로딩 화면 활성화
     setTimeout(() => {
       loadingScreen.classList.add('active');
     }, 400); 
-
-    // 4. 2.5초 로딩 후 시나리오 창으로 최종 전환
+  
     setTimeout(() => {
       loadingScreen.classList.remove('active');
-
+  
       if (celestialChart) {
         celestialChart.classList.add('fade-out');
       }
@@ -41,7 +39,6 @@ if (btnStart) {
     }, 2500); 
   });
 }
-
 
 // ==========================================
 // 3. 시나리오 화면 ➔ 플레이어 입력 화면 이동
@@ -64,10 +61,10 @@ if (btnPullCard) {
 
 document.addEventListener('DOMContentLoaded', () => {
   // 1. 현재 셔플로 매칭된 플레이어 이름 가져오기
-  const currentWinner = localStorage.getItem('currentPlayer');
+  const currentWinner = sessionStorage.getItem('currentPlayer');
   
   // 2. 전체 플레이어들의 체력 장부(Object) 가져오기
-  const playerHealth = JSON.parse(localStorage.getItem('playerHealth')) || {};
+  const playerHealth = JSON.parse(sessionStorage.getItem('playerHealth')) || {};
   
   // 3. 화면에 있는 하트 이미지(8개) 전부 긁어오기
   const hearts = document.querySelectorAll('.heart-container .heart');
