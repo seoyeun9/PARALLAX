@@ -216,7 +216,6 @@ body {
 
 .scenario-illustration {
   width: 100%;
-  margin-bottom: 20px;
           
   pointer-events: none;
           
@@ -234,7 +233,8 @@ body {
   flex: 1;
   overflow-y: auto;
   
-  margin-bottom: 15px;
+  margin-top: 50px;
+  margin-bottom: 40px;
   
   font-size: 15px;
   line-height: 1.6;
@@ -573,4 +573,5 @@ body {
 .situation-content {
   display: flow;
   max-height: 650px;
+  padding: 0 40px 0;
 }
