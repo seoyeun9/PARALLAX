@@ -49,8 +49,6 @@ body {
   transform: translateX(-50%);
 
   pointer-events: none;
-  
-  z-index: 3;
 }
 
         .border-frame img {
@@ -538,7 +536,7 @@ body {
   position: relative;
   width: 150%;
   bottom: 115px;
-  z-index: 10;
+  z-index: 99;
 }          
           .card-pull-zone img {
             width: 100%;
