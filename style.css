@@ -519,10 +519,11 @@ body {
 }
 
 .heart-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
 }
 
 .heart {
@@ -532,3 +533,14 @@ body {
 .card-pull-zone {
   width: 100%;
 }
+
+.card-pull-zone {
+  width: 100%;
+          
+  z-index: 10;
+}          
+          .card-pull-zone img {
+            width: 100%;
+            height: auto;
+            display: block;
+          }
