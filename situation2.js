@@ -4,13 +4,13 @@ const btnSaveIt = document.getElementById('btnSaveIt');
 
 if (btnUseIt) {
   btnUseIt.addEventListener('click', () => {
-    window.location.href = 'situation1_use.html';
+    window.location.href = 'situation2_use.html';
   });
 }
 
 
 if (btnSaveIt) {
   btnSaveIt.addEventListener('click', () => {
-    window.location.href = 'situation1_save.html';
+    window.location.href = 'situation2_save.html';
   });
 }
