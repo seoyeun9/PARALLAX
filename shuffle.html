@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="eng">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Shuffle</title>
+  <link rel="stylesheet" href="style.css">
+
+  <script>
+      (function(d) {
+        var config = {
+          kitId: 'ork8sug',
+          scriptTimeout: 3000,
+          async: true
+        },
+        h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+      })(document);
+  </script>
+
+</head>
+
+<body>
+    <div class="game-container">
+    
+    <div class="border-frame">
+      <img src="assets/line.png" class="border-frame" alt="line">
+    </div>
+
+    <header class="header">
+        <div class="title-container">
+            <div class="scenario-title-sub">
+                   <p class="universe-num">universe 5</p>
+                   <h2 class="scenario-name">WHITEOUT</h2>
+            </div>
+    
+            <div class="sub-text-container">
+                  <span class="sub-text">Shuffle</span>
+            </div>
+        </div>
+          
+        <div class="players-intro">
+            <h3>Now, let's change your identity with your friends...</h3>
+            <p>Type player's name and click the shuffle button.</p>
+        </div>
+
+    </header>
+
+        <section class="screen" id="playersScreen">          
+            <div class="input-container">
+                <div class="name-box">
+                    <div class="name-input-box" data-index="1">Name</div>
+                    <div class="name-input-box" data-index="2">Name</div>
+                    <div class="name-input-box" data-index="3">Name</div>
+                    <div class="name-input-box" data-index="4">Name</div>
+                    <div class="name-input-box" data-index="5">Name</div>
+                    <div class="name-input-box" data-index="6">Name</div>
+                </div>
+            </div>
+
+            <button class="btn-css-style disabled" id="btnActionShuffle">Shuffle</button>
+        </section>
+
+
+    
+        <section class="screen" id="resultScreen">
+
+            <div class="result-card">              
+              <p class="card-title">You are..</p>
+              <div class="card-avatar">
+                <img src="assets/pawn.png" alt="Pawn">
+              </div>
+              
+              <h3 class="picked-name" id="pickedPlayerName">. . .</h3>
+              <p class="card-desc">Now you became this person. Whenever you face the decision refer to this person's personality and perspectives to make a decision.</p>
+
+              <button class="btn-css-style" id="btnChooseDone">Start Surviving</button>
+            </div>
+          
+        </section>
+
+  <script src="shuffle.js"></script>
+</body>
+</html>
