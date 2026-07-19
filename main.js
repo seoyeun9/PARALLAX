@@ -54,7 +54,14 @@ const btnPullCard = document.getElementById('btnPullCard');
 
 if (btnPullCard) {
   btnPullCard.addEventListener('click', () => {
-    window.location.href = 'situation1.html'; 
+    
+    const stage = sessionStorage.getItem('currentStage') || '1';
+    
+    if (stage === '2') {
+      window.location.href = 'situation2.html';
+    } else {
+      window.location.href = 'situation1.html';
+    }
   });
 }
 
