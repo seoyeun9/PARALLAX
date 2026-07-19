@@ -598,6 +598,40 @@ body {
   gap: 10px;
 }
 
+.result-text-box {  
+  width: 100%;
+  flex: 1;
+  overflow-y: auto;
+  
+  margin-top: 20px;
+  margin-bottom: 20px;
+  
+  font-size: 15px;
+  line-height: 1.6;
+  color: #E8EAF6;
+  
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+      .result-text-box::-webkit-scrollbar {
+        display: none;
+      }
+      
+      .result-text-box p {
+        margin-bottom: 20px;
+      }
+                            
+      .result-text-box p:last-child {
+        margin-bottom: 0;
+      }
+                            
+      .result-text-box strong {
+        font-weight: 700;
+      }
+
+
 .half-heart {
   height: 50px;
   margin: 0px;
