@@ -603,8 +603,8 @@ body {
   flex: 1;
   overflow-y: auto;
   
-  margin-top: 40px;
-  margin-bottom: 20px;
+  margin-top: 20px;
+  margin-bottom: 10px;
   
   font-size: 15px;
   line-height: 1.6;
@@ -645,5 +645,5 @@ body {
 
 .heart_lose {
   height: 50px;
-  margin: 0px;
+  margin-bottom: 40px;
 }
