@@ -582,4 +582,6 @@ body {
   display: flex;
   flex-direction: column;
   overflow-y: auto;
+
+  gap: 15px;
 }
