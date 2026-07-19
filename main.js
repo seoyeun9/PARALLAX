@@ -67,53 +67,32 @@ if (btnPullCard) {
 
 
 document.addEventListener('DOMContentLoaded', () => {
-  // 1. 현재 화면에 당첨자로 표시된 캐릭터 이름 가져오기 ('린' 등)
   const currentWinner = sessionStorage.getItem('currentPlayer');
-  
-  // 2. 전체 캐릭터들의 체력 장부 가져오기
   const playerHealth = JSON.parse(sessionStorage.getItem('playerHealth')) || {};
-  
-  // 3. 화면에 있는 하트 이미지들 긁어오기
-  const hearts = document.querySelectorAll('.heart-container .heart');
+  const hearts = document.querySelectorAll('.heart-container .heart'); // 8개 하트라고 가정
 
-  // 화면에 당첨자 캐릭터가 표시되어 있고, 장부에 데이터가 있을 때만 실행
-  if (currentWinner && playerHealth[currentWinner] !== undefined && hearts.length > 0) {
-    
-    // ------------------------------------------
-    // 1️⃣ 당첨된 캐릭터 본인의 체력에 따른 하트 연동
-    // ------------------------------------------
-    const characterHp = playerHealth[currentWinner];
-
-    if (characterHp === 0.5) {
-      // 체력이 0.5면 첫 번째 하트를 반쪽 하트로 갈아끼우고 선명하게 표시
-      hearts[0].src = 'assets/half_heart.png';
-      hearts[0].style.opacity = '1.0';
-    } 
-    else if (characterHp <= 0) {
-      // 체력이 0 이하면 첫 번째 하트를 안 보이게 처리
-      hearts[0].style.visibility = 'hidden';
-    } 
-    else {
-      // 체력이 1.0 완치 상태라면 기본 꽉 찬 하트로 복구
+  // 1. 현재 플레이어의 하트 업데이트
+  if (currentWinner && hearts.length > 0) {
+    const myHp = playerHealth[currentWinner];
+    // 치료받아서 1.0이 되면 꽉 찬 하트, 아니면 반쪽/숨김
+    if (myHp >= 1.0) {
       hearts[0].src = 'assets/heart_full.png';
       hearts[0].style.opacity = '1.0';
-      hearts[0].style.visibility = 'visible';
+    } else if (myHp === 0.5) {
+      hearts[0].src = 'assets/half_heart.png';
+    } else {
+      hearts[0].style.visibility = 'hidden';
     }
+  }
 
-    // ------------------------------------------
-    // 2️⃣ "Save it" 패널티로 인해 '다른 캐릭터들'의 피가 깎였을 때의 연동
-    // ------------------------------------------
-    // 장부에서 현재 당첨된 캐릭터가 아닌 '다른 캐릭터' 아무나 한 명 찾아옵니다.
-const otherPlayers = Object.keys(playerHealth).filter(name => name !== currentWinner);
-
-    if (otherPlayers.length > 0) {
-      const isAllOthersDead = otherPlayers.every(name => playerHealth[name] <= 0);
-    
-      if (isAllOthersDead) {
-        hearts[0].style.opacity = '0.5';
-      } else {
-        hearts[0].style.opacity = '1.0';
-      }
-    }
+  // 2. [Save It 패널티 반영] 나를 제외한 전원의 하트 업데이트
+  const others = Object.keys(playerHealth).filter(n => n !== currentWinner);
+  
+  // 모든 동료의 피가 0 이하인가?
+  const isAllOthersDead = others.every(name => playerHealth[name] <= 0);
+  
+  // 💡 [핵심] 다른 사람들의 피가 깎였다면 2번째 하트(index 1)를 흐리게!
+  if (hearts.length > 1) {
+    hearts[1].style.opacity = isAllOthersDead ? '0.5' : '1.0';
   }
 });
