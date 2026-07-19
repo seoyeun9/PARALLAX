@@ -598,16 +598,7 @@ body {
   gap: 10px;
 }
 
-#result-illustration {
-  position: absolute;
+.half-heart, .food {
   height: 50px;
-
-  pointer-events: none;
-
-  z-index: 10;
+  margin: 0px;
 }
-
-        .result-illustration img {
-          height: 100%;
-          display: block;
-        }
