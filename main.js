@@ -51,3 +51,12 @@ if (btnShuffle) {
     window.location.href = 'shuffle.html';
   });
 }
+
+
+const btnPullCard = document.getElementById('btnPullCard');
+
+if (btnPullCard) {
+  btnPullCard.addEventListener('click', () => {
+    window.location.href = 'situation1.html'; 
+  });
+}
