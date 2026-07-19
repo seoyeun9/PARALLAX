@@ -598,7 +598,7 @@ body {
   gap: 10px;
 }
 
-.result-illustration {
+#result-illustration {
   position: absolute;
   height: 50px;
 
