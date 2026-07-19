@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="eng">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Shuffle</title>
+  <link rel="stylesheet" href="style.css">
+
+  <script>
+      (function(d) {
+        var config = {
+          kitId: 'ork8sug',
+          scriptTimeout: 3000,
+          async: true
+        },
+        h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+      })(document);
+  </script>
+
+</head>
+
+<body>
+    <div class="game-container">
+    
+    <div class="border-frame">
+      <img src="assets/line.png" class="border-frame" alt="line">
+    </div>
+
+      <header class="header">
+          <div class="title-container">
+              <div class="scenario-title-sub">
+                     <p class="universe-num">universe 5</p>
+                     <h2 class="scenario-name">WHITEOUT</h2>
+              </div>
+      
+              <div class="sub-text-container">
+                    <span class="sub-text">Day 1 Morning</span>
+              </div>
+          </div>  
+      </header>
+
+      <section class="situation-content" id="situation-content">
+        
+          <div class="scenario-illustration">
+             <img src="assets/cabin.png" alt="Whiteout Cabin">
+          </div>
+        
+          <section class="result-content">  
+                <div class="result-text-box">                
+                     <p><strong>You use the first-aid kit to fully treat the patient</strong></p>
+                </div>
+    
+                <img src="assets/heart_full.png" class="half-heart" alt="Heart">
+      
+                <div class="result-text-box">                
+                     <p>Although the kit is now empty, the patient’s lost health stauts is fully restored, and a sense of warmth and relief fills the cabin.</p>
+                </div>
+              
+                <section class="bottom-container">                                 
+                    <button class="btn-css-style" id="btnMoveOn">Move on</button>
+                </section>
+          </section>
+
+      </section>
+    </div>
+
+  <script src="use.js"></script>
+</body>
