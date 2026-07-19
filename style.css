@@ -598,7 +598,12 @@ body {
   gap: 10px;
 }
 
-.half-heart, .food {
+.half-heart {
   height: 50px;
   margin: 0px;
+}
+
+.food {
+  height: 50px;
+  margin-bottom: 40px;
 }
