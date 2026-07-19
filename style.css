@@ -373,7 +373,7 @@ body {
 #btnActionShuffle {
   position: absolute;
   
-  bottom: 0;
+  bottom: 110px;
   left: 50%;
   transform: translateX(-50%);
   
@@ -394,7 +394,7 @@ body {
         display: flex;
         flex-direction: column;
         
-        gap: 30px;
+        gap: 15px;
       }
 
             .name-input-box {
@@ -458,7 +458,7 @@ body {
   flex-direction: column;
   
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 .result-card {
@@ -476,7 +476,6 @@ body {
   
   padding: 0 25px 25px; 
   text-align: center;
-  margin-bottom: 150px;
 }
 
       .card-title {
@@ -518,7 +517,7 @@ body {
 
 #btnChooseDone {
     position: absolute;
-    bottom: 0;
+    bottom: 110px;
     left: 50%;
     transform: translateX(-50%);
     width: 80%;
