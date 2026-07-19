@@ -69,8 +69,8 @@ if (btnChooseDone) {
 document.addEventListener('DOMContentLoaded', () => {
   const pickedPlayerNameHtml = document.getElementById('pickedPlayerName');
   
-  const savedWinner = localStorage.getItem('currentPlayer');
-
+  const savedWinner = sessionStorage.getItem('currentPlayer');
+  
   if (pickedPlayerNameHtml && savedWinner) {
     pickedPlayerNameHtml.textContent = savedWinner;
   }
