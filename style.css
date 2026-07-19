@@ -23,6 +23,31 @@ body {
 }
 
 
+.screen {
+  position: absolute;
+
+  width: 100%;
+  height: 100%;
+  
+  padding: 45px 40px 0;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.8s ease, visibility 0.8s ease;
+  z-index: 2;
+}
+
+
+.screen.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+
 .game-container {
   position: relative;
   width: 100%;
@@ -238,31 +263,6 @@ body {
       }
 
 
-
-.screen {
-  position: absolute;
-
-  width: 100%;
-  height: 100%;
-  
-  padding: 45px 40px 0;
-  
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.8s ease, visibility 0.8s ease;
-  z-index: 2;
-}
-
-.screen.active {
-  opacity: 1;
-  visibility: visible;
-}
-
-
 .btn-start {
   position: absolute;
   width: 70%;
@@ -318,6 +318,15 @@ body {
   display: flow;
   max-height: 650px;
 }
+
+
+.header {
+  position: relative;
+  width: 100%;
+  padding: 45px 40px 0;
+  z-index: 10;
+}
+
 
 .title-container {
   position: relative;
