@@ -651,7 +651,7 @@ body {
 
 .end-text {
   position: relative;
-  top: 330px;
+  top: 300px;
   
   display: flex;
   flex-direction: column;
@@ -661,15 +661,15 @@ body {
   gap: 10px;
 }
 
-.tbc {
-  font-family: source-han-serif-kr-subset, sans-serif;
-  font-weight: 900;
-  font-size: 14px;
-}
-
-.universe-num {
-  font-size: 14px;
-  font-weight: 400;
-  font-style: normal;
-  line-height: 1.6;
-}
+      .tbc {
+        font-family: source-han-serif-kr-subset, sans-serif;
+        font-weight: 900;
+        font-size: 14px;
+      }
+      
+      .universe-num {
+        font-size: 14px;
+        font-weight: 400;
+        font-style: normal;
+        line-height: 1.6;
+      }
