@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (btnSuccessMoveOn) {
     btnSuccessMoveOn.addEventListener('click', () => {
-      window.location.href = 'idle.html'; 
+      window.location.href = 'WHITEOUT.html'; 
     });
   }
 });
