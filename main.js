@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // 💡 체력이 0.5로 반토막 난 상태라면?
     if (hp === 0.5) {
       // 가장 첫 번째 하트(index 0)의 이미지를 반쪽 하트로 교체!
-      hearts[0].src = 'assets/half-heart.png';
+      hearts[0].src = 'assets/half_heart.png';
     } 
     // 💡 체력이 0이 되어 아예 다 닳았다면?
     else if (hp <= 0) {
