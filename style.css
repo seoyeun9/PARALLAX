@@ -641,3 +641,9 @@ body {
   height: 50px;
   margin-bottom: 40px;
 }
+
+
+.heart_lose {
+  height: 50px;
+  margin: 0px;
+}
