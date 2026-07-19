@@ -1,23 +1,12 @@
-// ==========================================
-// 1. 화면 및 요소 변수 선언
-// ==========================================
 const btnStart = document.getElementById('btnStart');
 const chartRotateWrap = document.querySelector('#celestialChart .chart-rotate-wrap');
-const celestialChart = document.getElementById('celestialChart'); // 에러 방지를 위해 변수 선언 추가
+const celestialChart = document.getElementById('celestialChart');
 
 const homeScreen = document.getElementById('homeScreen');
 const loadingScreen = document.getElementById('loadingScreen');
 const scenarioScreen = document.getElementById('scenarioScreen');
-const playersScreen = document.getElementById('playersScreen');
-const resultScreen = document.getElementById('resultScreen');
 
-// 셔플 및 이름 입력 관련 변수들
 const btnShuffle = document.querySelector('.btn-shuffle');
-const btnActionShuffle = document.getElementById('btnActionShuffle'); 
-const pickedPlayerName = document.getElementById('pickedPlayerName');
-
-// 현재 채워진 플레이어 이름을 담을 배열
-let activePlayers = [];
 
 
 // ==========================================
@@ -59,77 +48,6 @@ if (btnStart) {
 // ==========================================
 if (btnShuffle) {
   btnShuffle.addEventListener('click', () => {
-    scenarioScreen.classList.remove('active');
-    playersScreen.classList.add('active');
-  });
-}
-
-
-// ==========================================
-// 4. 가짜 입력 기능 (Name 박스 클릭 시 Player 이름 주입)
-// ==========================================
-document.querySelectorAll('.name-input-box').forEach((box) => {
-  box.addEventListener('click', function() {
-    const idx = this.getAttribute('data-index');
-    const playerName = `Player ${idx}`;
-    
-    // 이미 배열에 들어간 이름이 아니라면 텍스트 바꾸고 추가
-    if (!activePlayers.includes(playerName)) {
-      this.textContent = playerName;
-      this.classList.add('filled'); // 불투명도 100% 스타일 적용
-      activePlayers.push(playerName);
-    }
-    
-    // 💡 핵심: 2개 이상의 칸이 채워지면 Shuffle 버튼 활성화!
-    if (activePlayers.length >= 2) {
-      if (btnActionShuffle) {
-        btnActionShuffle.classList.remove('disabled');
-      }
-    }
-  });
-});
-
-
-let selectedPlayer = '';
-// ==========================================
-// 5. 플레이어 입력 완료 ➔ 랜덤 셔플 결과 화면 이동
-// ==========================================
-if (btnActionShuffle) {
-  btnActionShuffle.addEventListener('click', () => {
-    // 2개 이상 안 채워져서 disabled 클래스가 붙어있으면 작동 안 함
-    if (btnActionShuffle.classList.contains('disabled')) return;
-    
-    // 입력된 이름들 중 랜덤으로 하나 선택
-    if (activePlayers.length > 0) {
-      const randomIndex = Math.floor(Math.random() * activePlayers.length);
-      const winner = activePlayers[randomIndex];
-      
-      // 결과 카드 자리에 이름 꽂아넣기
-      if (pickedPlayerName) {
-        pickedPlayerName.textContent = winner;
-      }
-    }
-    
-    // 최종 화면 전환
-    playersScreen.classList.remove('active');
-    resultScreen.classList.add('active');
-  });
-}
-
-
-
-// ==========================================
-// 6. 결과 화면 ➔ 인게임 Idle 화면 이동 (새 페이지 전환)
-// ==========================================
-const btnChooseDone = document.getElementById('btnChooseDone');
-
-if (btnChooseDone) {
-  btnChooseDone.addEventListener('click', () => {
-    // 💡 [수정] 늘 'Player 3'만 저장되는 대신, 실제 셔플로 뽑힌 이름을 세션/로컬에 저장!
-    // 만약 예외 상황으로 비어있다면 기본값으로 'Player 3'를 줍니다.
-    localStorage.setItem('currentPlayer', selectedPlayer || '. . .');
-
-    // ➔ WHITEOUT.html 페이지로 이동
-    window.location.href = 'WHITEOUT.html';
+    window.location.href = 'shuffle.html';
   });
 }
