@@ -27,7 +27,9 @@ document.addEventListener('DOMContentLoaded', () => {
       playerHealth[targetName] = Math.max(0, playerHealth[targetName] - 0.5);
       
       sessionStorage.setItem('playerHealth', JSON.stringify(playerHealth));
-      sessionStorage.setItem('chosenPlayer', targetName); 
+      sessionStorage.setItem('chosenPlayer', targetName);
+
+      sessionStorage.setItem('currentStage', '2');
       
       window.location.href = 'result1.html';
     });
