@@ -4,20 +4,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (newPlayerInput && btnMoveOn) {
     
+
     newPlayerInput.addEventListener('input', () => {
-      if (newPlayerInput.value.trim() !== '') {
+      const name = newPlayerInput.value.trim();
+
+      if (name !== '') {
+
+        newPlayerInput.classList.add('filled');
         btnMoveOn.classList.remove('disabled');
       } else {
+
+        newPlayerInput.classList.remove('filled');
         btnMoveOn.classList.add('disabled');
       }
     });
 
+
     btnMoveOn.addEventListener('click', () => {
+
       if (btnMoveOn.classList.contains('disabled')) return;
       
       localStorage.setItem('chosenPlayer', newPlayerInput.value.trim());
+
       
       window.location.href = 'result1.html';
     });
+
   }
 });
